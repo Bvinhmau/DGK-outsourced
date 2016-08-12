@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="DGK" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/DGK" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-g" />
+					<Add option="-fpermissive -lntl -lX" />
+					<Add directory="../cygwin64/lib/ntl-9.7.0/include" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-lws2_32" />
+					<Add directory="../cygwin64/lib/ntl-9.7.0" />
+					<Add directory="../cygwin64/lib/ntl-9.7.0/src" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/DGK" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/BasicThreadPool.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/FFT.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/FacVec.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/GF2.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/GF2E.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/GF2EX.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/GF2EXFactoring.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/GF2X.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/GF2X1.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/GF2XFactoring.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/GF2XVec.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/G_LLL_FP.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/G_LLL_QP.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/G_LLL_RR.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/G_LLL_XD.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/GetPID.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/GetTime.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/HNF.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/LLL.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/LLL_FP.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/LLL_QP.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/LLL_RR.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/LLL_XD.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/RR.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/WordVector.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/ZZ.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/ZZVec.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/ZZX.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/ZZX1.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/ZZXCharPoly.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/ZZXFactoring.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/ZZ_p.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/ZZ_pE.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/ZZ_pEX.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/ZZ_pEXFactoring.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/ZZ_pX.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/ZZ_pX1.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/ZZ_pXCharPoly.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/ZZ_pXFactoring.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/c_lip_impl.h" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/ctools.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/fileio.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/g_lip_impl.h" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/lip.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/lzz_p.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/lzz_pE.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/lzz_pEX.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/lzz_pEXFactoring.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/lzz_pX.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/lzz_pX1.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/lzz_pXCharPoly.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/lzz_pXFactoring.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/mat_GF2.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/mat_GF2E.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/mat_RR.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/mat_ZZ.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/mat_ZZ_p.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/mat_ZZ_pE.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/mat_lzz_p.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/mat_lzz_pE.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/mat_poly_ZZ.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/mat_poly_ZZ_p.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/mat_poly_lzz_p.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/quad_float.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/thread.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/tools.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/vec_GF2.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/vec_GF2E.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/vec_RR.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/vec_ZZ.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/vec_ZZ_p.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/vec_ZZ_pE.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/vec_lzz_p.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/vec_lzz_pE.cpp" />
+		<Unit filename="../cygwin64/lib/ntl-9.7.0/src/xdouble.cpp" />
+		<Unit filename="include/DGKClient.h" />
+		<Unit filename="include/DGKOperations.h" />
+		<Unit filename="include/DGKOutSourcedOperationsID.h" />
+		<Unit filename="include/DGKPrivateKey.h" />
+		<Unit filename="include/DGKPublicKey.h" />
+		<Unit filename="include/DGKServer.h" />
+		<Unit filename="include/comm.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/DGKOperations.cpp" />
+		<Unit filename="src/DGKPrivateKey.cpp" />
+		<Unit filename="src/DGKPublicKey.cpp" />
+		<Unit filename="src/comm.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
