@@ -220,7 +220,7 @@ std:vector< unsigned long> inputs(numb);
 
 
         t1 = high_resolution_clock::now();
-    ids2 = DGKOperations::topKMaxSwap(pubKey,privKey,sock,inputscipher,kk);
+    ids2 = DGKOperations::topKMaxSwap(pubKey,sock,inputscipher,kk);
   //ids1 = DGKOperations::topKMaxTournament(pubKey,privKey,sock,inputscipher,kk);
 
                 t2 = high_resolution_clock::now();

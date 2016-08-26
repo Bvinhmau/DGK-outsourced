@@ -736,8 +736,6 @@ vector<int> DGKOperations::topKMaxTournament(DGKPublicKey &pubKey, DGKPrivateKey
                         {
                             children[inputsid[indexinputs]] = iterindex;
                             children[inputsid[indexinputs+1]] = iterindex;
-                            //cout<< inputsid[indexinputs] << " ; " << children[inputsid[indexinputs]] <<"\n";
-                            // cout<< inputsid[indexinputs+1] << " ; " << children[inputsid[indexinputs+1]] <<"\n";
 
                             vector<int> temparents;
 
@@ -754,9 +752,6 @@ vector<int> DGKOperations::topKMaxTournament(DGKPublicKey &pubKey, DGKPrivateKey
                         {
                             children[treeNodeId[treeNodeIndex]] = iterindex;
                             children[treeNodeId[treeNodeIndex+1]] = iterindex;
-
-                            //  cout<< treeNodeId[treeNodeIndex] << " ; " << children[treeNodeId[treeNodeIndex]] <<"\n";
-                            // cout<< treeNodeId[treeNodeIndex+1] << " ; " << children[treeNodeId[treeNodeIndex+1]] <<"\n";
 
                             vector<int> temparents;
 
@@ -785,20 +780,7 @@ vector<int> DGKOperations::topKMaxTournament(DGKPublicKey &pubKey, DGKPrivateKey
 
 
     }
-    /**
-        cout<<"+++++ CHILDREN +++++"<<"\n";
 
-        for(int i = 0 ; i < children.size() ; ++i){
-            cout<< i << " ; " << children[i] <<"\n";
-        }
-        cout<<"+++++ PARENTS +++++"<<"\n";
-
-        for(int i = 0 ; i < parents.size() ; ++i){
-            for(int j = 0 ; j < parents[i].size() ; ++j){
-                        cout<< i << " ; " << (parents[i])[j] <<"\n";
-                    }
-        }
-        **/
     vector<ZZ> cipherTournam(numbcomp+inputs.size());
     vector<ZZ> iDTournam(numbcomp+inputs.size());
 
@@ -826,7 +808,6 @@ vector<int> DGKOperations::topKMaxTournament(DGKPublicKey &pubKey, DGKPrivateKey
         int idToReplace = resultsId[w];
         int idNewelement = inputs.size() + w;
 
-//        cout <<"tt: "<< idToReplace << " "<< idNewelement << " us\n [";
         if(w == k -2)
         {
             cipherTournam[idToReplace] = encrypt(pubKey,0);
@@ -839,7 +820,6 @@ vector<int> DGKOperations::topKMaxTournament(DGKPublicKey &pubKey, DGKPrivateKey
             iDTournam[idToReplace] =  encrypt(pubKey,idNewelement);
         }
         int currentIdIndex = idToReplace;
-        //        cout <<"TopKInputs: "<< " us\n [";
 
         while(children[currentIdIndex] != -1)
         {
@@ -1160,12 +1140,7 @@ ZZ DGKOperations::isSuperiorTo(DGKPublicKey &pubKey,DGKPrivateKey &privKey, ZZ x
     effectOfAlphaBetaOverflow = std::get<0>(CipherMultiplication(pubKey,privKey,effectOfAlphaBetaOverflow,d));
     // encBetaMayOverflow
     result = DGKAdd(pubKey,result,DGKMultiply(pubKey,effectOfAlphaBetaOverflow,u-1));
-    /**
-       cout <<"ALPHA ALPHAHAT BETA "<< alpha << " " << alphaHat << " " << beta << " ZR "<< plainZ << " "<< r << " RES " << decrypt(pubKey,privKey, divZ) <<  " - " << r/powL << " - " << decrypt(pubKey,privKey,betaInfAlpha)<< " + "
-     << decrypt(pubKey, privKey, overflow)<<
-     " POI " << decrypt(pubKey,privKey,doubleBucketGap)<< "OVERFLOOO "<< lastpush <<" "<< decrypt(pubKey,privKey,effectOfAlphaBetaOverflow)<<" D "
-      << decrypt(pubKey,privKey,d)<<" Derpus " << decrypt(pubKey,privKey,xorBitsSum) << "\n";
-    **/
+
     return result;
 }
 
@@ -1532,12 +1507,7 @@ ZZ DGKOperations::isSuperiorTo(DGKPublicKey &pubKey,int sock, ZZ x, ZZ y)
 
 
     result = DGKAdd(pubKey,result,correctionincrement);
-    /**
-       cout <<"ALPHA ALPHAHAT BETA "<< alpha << " " << alphaHat << " " << beta << " ZR "<< plainZ << " "<< r << " RES " << decrypt(pubKey,privKey, divZ) <<  " - " << r/powL << " - " << decrypt(pubKey,privKey,betaInfAlpha)<< " + "
-     << decrypt(pubKey, privKey, overflow)<<
-     " POI " << decrypt(pubKey,privKey,doubleBucketGap)<< "OVERFLOOO "<< lastpush <<" "<< decrypt(pubKey,privKey,effectOfAlphaBetaOverflow)<<" D "
-      << decrypt(pubKey,privKey,d)<<" Derpus " << decrypt(pubKey,privKey,xorBitsSum) << "\n";
-    **/
+
     return result;
 }
 
@@ -1732,9 +1702,6 @@ vector<int> DGKOperations::topKMaxTournament(DGKPublicKey &pubKey, DGKPrivateKey
                         {
                             children[inputsid[indexinputs]] = iterindex;
                             children[inputsid[indexinputs+1]] = iterindex;
-                            //cout<< inputsid[indexinputs] << " ; " << children[inputsid[indexinputs]] <<"\n";
-                            // cout<< inputsid[indexinputs+1] << " ; " << children[inputsid[indexinputs+1]] <<"\n";
-
                             vector<int> temparents;
 
                             temparents.push_back(inputsid[indexinputs]);
@@ -1751,8 +1718,6 @@ vector<int> DGKOperations::topKMaxTournament(DGKPublicKey &pubKey, DGKPrivateKey
                             children[treeNodeId[treeNodeIndex]] = iterindex;
                             children[treeNodeId[treeNodeIndex+1]] = iterindex;
 
-                            //  cout<< treeNodeId[treeNodeIndex] << " ; " << children[treeNodeId[treeNodeIndex]] <<"\n";
-                            // cout<< treeNodeId[treeNodeIndex+1] << " ; " << children[treeNodeId[treeNodeIndex+1]] <<"\n";
 
                             vector<int> temparents;
 
@@ -1781,20 +1746,7 @@ vector<int> DGKOperations::topKMaxTournament(DGKPublicKey &pubKey, DGKPrivateKey
 
 
     }
-    /**
-        cout<<"+++++ CHILDREN +++++"<<"\n";
 
-        for(int i = 0 ; i < children.size() ; ++i){
-            cout<< i << " ; " << children[i] <<"\n";
-        }
-        cout<<"+++++ PARENTS +++++"<<"\n";
-
-        for(int i = 0 ; i < parents.size() ; ++i){
-            for(int j = 0 ; j < parents[i].size() ; ++j){
-                        cout<< i << " ; " << (parents[i])[j] <<"\n";
-                    }
-        }
-        **/
     vector<ZZ> cipherTournam(numbcomp+inputs.size());
     vector<ZZ> iDTournam(numbcomp+inputs.size());
 
@@ -1823,7 +1775,6 @@ vector<int> DGKOperations::topKMaxTournament(DGKPublicKey &pubKey, DGKPrivateKey
         int idToReplace = resultsId[w];
         int idNewelement = inputs.size() + w;
 
-//        cout <<"tt: "<< idToReplace << " "<< idNewelement << " us\n [";
         if(w == k -2)
         {
             cipherTournam[idToReplace] = encrypt(pubKey,0);
@@ -1836,7 +1787,6 @@ vector<int> DGKOperations::topKMaxTournament(DGKPublicKey &pubKey, DGKPrivateKey
             iDTournam[idToReplace] =  encrypt(pubKey,idNewelement);
         }
         int currentIdIndex = idToReplace;
-        //        cout <<"TopKInputs: "<< " us\n [";
 
         while(children[currentIdIndex] != -1)
         {
@@ -1857,7 +1807,7 @@ vector<int> DGKOperations::topKMaxTournament(DGKPublicKey &pubKey, DGKPrivateKey
     return resultsId;
 }
 
-static vector<ZZ> DGKOperations::topKMaxSwap(DGKPublicKey &pubKey, DGKPrivateKey &privKey, int sock,vector<ZZ> completeInputs,int k)
+static vector<ZZ> DGKOperations::topKMaxSwap(DGKPublicKey &pubKey, int sock,vector<ZZ> completeInputs,int k)
 {
     int u = pubKey.GetU();
 
@@ -1867,7 +1817,6 @@ static vector<ZZ> DGKOperations::topKMaxSwap(DGKPublicKey &pubKey, DGKPrivateKey
 
         vector<ZZ> swappableInputs(bigN);
     vector<ZZ> swappableId(bigN);
-    cout<< "oups" << endl;
     for(int i = 0 ; i < bigN ; ++i)
     {
         if (i < n){
@@ -1893,7 +1842,6 @@ static vector<ZZ> DGKOperations::topKMaxSwap(DGKPublicKey &pubKey, DGKPrivateKey
             int firstId = 0;
             int secondId = firstId + pow(2,currentdepth);
             while(secondId < bigN){
-//cout << firstId << " " << secondId << " " << bigN << endl;
                 ZZ shallswap =DGKOperations::DGKAdd(pubKey,
                                                     DGKOperations::encrypt(pubKey,1),
                                                     DGKOperations::DGKMultiply(pubKey,
@@ -1942,11 +1890,10 @@ static vector<ZZ> DGKOperations::topKMaxSwap(DGKPublicKey &pubKey, DGKPrivateKey
               for (int currentdepth = 0 ; currentdepth < treesize ; currentdepth++)
         {
 
-            int firstId = 0;
+            int firstId = 0;;
             int secondId = firstId + pow(2,currentdepth);
 
 
-                cout << firstId << " " << secondId << " " << bigN << endl;
                 ZZ shallswap =DGKOperations::DGKAdd(pubKey,
                                                     DGKOperations::encrypt(pubKey,1),
                                                     DGKOperations::DGKMultiply(pubKey,

@@ -128,7 +128,7 @@ static ZZ DGKOperations::isSuperiorTo(DGKPublicKey &pubKey,int sock, ZZ x, ZZ y)
 static vector<int> DGKOperations::topKMaxVanilla(DGKPublicKey &pubKey , DGKPrivateKey &privKey ,vector<ZZ> finputs,int k);
 static vector<int> DGKOperations::topKMaxTournament(DGKPublicKey &pubKey , DGKPrivateKey &privKey ,vector<ZZ> finputs,int k);
 static vector<int> DGKOperations::topKMaxTournament(DGKPublicKey &pubKey, DGKPrivateKey &privKey, int sock,vector<ZZ> completeInputs,int k);
-static vector<ZZ> DGKOperations::topKMaxSwap(DGKPublicKey &pubKey, DGKPrivateKey &privKey, int sock,vector<ZZ> completeInputs,int k);
+static vector<ZZ> DGKOperations::topKMaxSwap(DGKPublicKey &pubKey, int sock,vector<ZZ> completeInputs,int k);
 
 static ZZ DGKOperations::replaceIf(DGKPublicKey &pubKey , DGKPrivateKey &privKey ,ZZ a , ZZ b , ZZ replaceAbyB);
 static ZZ DGKOperations::replaceIf(DGKPublicKey &pubKey , DGKPrivateKey &privKey ,ZZ a , long b , ZZ replaceAbyB);

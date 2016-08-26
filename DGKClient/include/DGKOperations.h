@@ -88,7 +88,10 @@ static std::tuple<ZZ, ZZ>  DGKOperations::CipherMultiplication(DGKPublicKey &pub
 Multiplication of two ciphertexts using BetterTime in the honnest but curious model, offline version, return <x*y,d> with d
 */
 static ZZ CipherMultiplicationHonnest(DGKPublicKey &pubKey,DGKPrivateKey &privKey, ZZ x , ZZ y);
-
+/*
+Multiplication of two ciphertexts using BetterTime in the malicious model, offline version, return <x*y,d> with d
+*/
+static ZZ DGKOperations::CipherMultiplicationHonnest(DGKPublicKey &pubKey,int sock, ZZ x, ZZ y);
 
 /*
  Set of operations that may be used to conduce a Cipher Multiplication on online version , in the malicious model
@@ -113,28 +116,29 @@ Convert a ZZ Big Integer to a (base 255) string, and vice versa
 static ZZ DGKOperations::stringToZZ(string str);
 static string DGKOperations::ZZToString( ZZ z);
 
+/*
+Set of function to send a given type to a destination socket
+*/
 static void DGKOperations::sendZZ( int sock,ZZ cipher);
-
 static void DGKOperations::sendInt(int sock , int op);
+
+static ZZ DGKOperations::isSuperiorTo(DGKPublicKey &pubKey,int sock, ZZ x, ZZ y);
+
 
 static vector<int> DGKOperations::topKMaxVanilla(DGKPublicKey &pubKey , DGKPrivateKey &privKey ,vector<ZZ> finputs,int k);
 static vector<int> DGKOperations::topKMaxTournament(DGKPublicKey &pubKey , DGKPrivateKey &privKey ,vector<ZZ> finputs,int k);
+static vector<int> DGKOperations::topKMaxTournament(DGKPublicKey &pubKey, DGKPrivateKey &privKey, int sock,vector<ZZ> completeInputs,int k);
+static vector<ZZ> DGKOperations::topKMaxSwap(DGKPublicKey &pubKey, int sock,vector<ZZ> completeInputs,int k);
 
 static ZZ DGKOperations::replaceIf(DGKPublicKey &pubKey , DGKPrivateKey &privKey ,ZZ a , ZZ b , ZZ replaceAbyB);
 static ZZ DGKOperations::replaceIf(DGKPublicKey &pubKey , DGKPrivateKey &privKey ,ZZ a , long b , ZZ replaceAbyB);
 
+/*
+Set of function used by the Client when he needed to perform some outsourced operations
+*/
 static void DGKOperations::PerformMultiplicationOutsourced(DGKPublicKey pubkKey, DGKPrivateKey privKey, int stocking);
 static void DGKOperations::PerformMultiplicationOutsourcedHonnest(DGKPublicKey pubKey, DGKPrivateKey privKey, int stocking);
-static ZZ DGKOperations::CipherMultiplicationHonnest(DGKPublicKey &pubKey,int sock, ZZ x, ZZ y);
-static ZZ DGKOperations::isSuperiorTo(DGKPublicKey &pubKey,int sock, ZZ x, ZZ y);
 static void DGKOperations::isSuperiorToFirstOutsourcedPart(DGKPublicKey pubKey, DGKPrivateKey privKey, int sock);
-
-
-static vector<int> DGKOperations::topKMaxTournament(DGKPublicKey &pubKey, DGKPrivateKey &privKey, int sock,vector<ZZ> completeInputs,int k);
-static vector<ZZ> DGKOperations::topKMaxSwap(DGKPublicKey &pubKey, DGKPrivateKey &privKey, int sock,vector<ZZ> completeInputs,int k);
-
-static void DGKOperations::produceReplacementVector(DGKPublicKey &pubKey, DGKPrivateKey &privKey, int sock);
-
 
 protected:
 
